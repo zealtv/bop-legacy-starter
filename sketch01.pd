@@ -10,11 +10,11 @@
 #X obj 100 370 bop;
 #A saved 90;
 #X obj 100 1410 bop.mix;
-#A saved 0 0.850362 -0.5;
+#A saved 0 0.782289 0;
 #X obj 100 1010 bop.sampler;
 #A saved note1.wav 0 0.269663 0 1 0 4.2951 1;
 #X obj 100 520 bop.rhythm;
-#A saved 24 2.80952 1 1 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 1
+#A saved 24 2.80952 1 1 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0
 ;
 #X obj 100 738 bop.notelist;
 #A saved g3\ f#3\ e3\ d3\ c3\ b2\ a2\ g2 0.075;
@@ -28,7 +28,7 @@
 #X obj 500 230 r \$0-from-parent;
 #X obj 710 260 s \$0-from-parent;
 #X obj 100 1608 bop.out;
-#A saved 0 0 0 0;
+#A saved 1 0 0 0;
 #X obj 301 1527 route play;
 #X msg 300 1550 audio \$1;
 #X obj 460 60 declare -path ./bop;
