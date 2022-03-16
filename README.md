@@ -1,13 +1,12 @@
 # bop-starter
 A starter template for a new bop sketch
 
-To get started, open a terminal to the desired destination of your bop project and run:
+### Step 1
+open a terminal and cd to the destination directory of you project
 
+### Step 2
 ```
-git clone https://github.com/zealtv/bop-starter
-cd bop-starter
-git submodule init
-git submodule update
+git clone --recursive https://github.com/zealtv/bop-starter
 ```
-
-Open MAIN.pd in Purr Data or Pure Data Vanilla (with cyclone, iemguts, freeverb).
+### Step 3
+Open bop-starter/MAIN.pd in Purr Data or Pure Data Vanilla (with cyclone, iemguts, freeverb).
