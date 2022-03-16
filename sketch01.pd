@@ -1,63 +1,106 @@
 #N struct text float x float y text t;
-#N canvas 1273 0 638 975 10;
-#X obj 200 1420 outlet~;
-#X obj 270 1420 outlet~;
-#X obj 200 182 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#N canvas 0 0 1904 968 10;
+#X declare -path ./bop;
+#X declare -path ./samples;
+#X obj 100 1710 outlet~;
+#X obj 170 1710 outlet~;
+#X obj 700 332 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000 0 1;
-#X obj 200 210 switch~;
-#X msg 400 250 play \$1;
-#X obj 200 300 bop;
+#X obj 700 360 switch~;
+#X obj 100 370 bop;
 #A saved 110;
-#X obj 200 1310 bop.mix;
-#A saved 0 1.13876 0;
-#X obj 200 910 bop.sampler;
+#X obj 100 1410 bop.mix;
+#A saved 0 1.00479 0;
+#X obj 100 1010 bop.sampler;
 #A saved banjo.wav 0 0.269663 0.195652 0 0 4.2951 1;
-#X msg 460 250 amp 1;
-#X obj 200 420 bop.rhythm;
-#A saved 4.625 4.21429 1 0 1\ 0\ 1\ 1\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0
+#X obj 100 520 bop.rhythm;
+#A saved 8.625 1.89643 1 0 1\ 1\ 1\ 1\ 1\ 1\ 1\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0
 ;
-#X obj 200 638 bop.notelist;
+#X obj 100 738 bop.notelist;
 #A saved g4\ f#4\ d4 0;
-#X obj 600 300 bop.palette;
-#X obj 400 220 r \$0-inlet;
-#X obj 200 120 r \$0-inlet;
-#X obj 200 80 s \$0-inlet;
-#X obj 200 150 route play;
-#X obj 200 50 inlet;
-#X obj 200 736 bop.notefx;
-#A saved 0.56 -1.49143 0 0 100 127 1 0 0;
-#X obj 200 1130 bop.reverb;
-#A saved 0.866848 0.15625 1.07609 0.0251917 0.722263 0 0;
+#X obj 400 590 bop.palette;
+#X obj 700 300 route play;
+#X obj 700 230 inlet;
+#X obj 100 836 bop.notefx;
+#A saved 0.56 -1.20571 0 0 92.0732 127 1 0 0;
+#X obj 100 1230 bop.reverb;
+#A saved 0.866848 0.278533 0.793478 0.0520565 0.722263 0 0;
+#X obj 500 230 r \$0-from-parent;
+#X obj 710 260 s \$0-from-parent;
+#X obj 100 1608 bop.out;
+#A saved 0 0 0 0;
+#X obj 301 1527 route play;
+#X msg 300 1550 audio \$1;
+#X obj 460 60 declare -path ./bop;
+#X obj 460 85 declare -path ./samples;
+#X text 100 230 LEFT;
+#X text 150 230 RIGHT;
+#X text 200 230 MIDI-notes;
+#X text 290 230 Control Messages;
+#X msg 300 280 play 1;
+#X text 320 490 🦃audio \, midi \, and control messages are passed
+through.;
+#X obj 100 60 cnv 15 336 30 empty empty 🐦\ WELCOME\ TO\ THE\ BOP\ STARTER\ SKETCH
+20 12 0 14 #400040 #ffffff 0;
+#X msg 350 280 play 0;
+#X text 370 1550 🦆You can intercept messages from upstream to automate
+other parameters, f 22;
+#X text 400 570 🐣use bop.palette to browse and create bop.modules
+;
+#X text 100 100 🦉bop is a modular tool suite for music making in
+Purr Data and Pure Data vanilla., f 55;
+#X text 100 140 bop in pd vanilla requires the cyclone \, iemguts \,
+and freeverb libraries., f 55;
+#X text 100 200 bop uses the same inlet/outlet convention as ORAC.
+, f 53;
+#X text 100 260 🦅messages are addressed by parameter label. This
+[play 1( message controls the play toggle on the first bop module,
+f 30;
+#X text 500 260 🦉This bop sketch can be controlled from a parent
+patch to be mixed with bop other sketches., f 24;
+#X text 500 320 Close this patch and open parent-example.pd to see
+how., f 26;
+#X text 830 250 🕊️This maps incoming play messages to the switch
+object which disables audio processing in this sketch when bop is not
+playing. This allows for scalability when working with many sketches
+controlled from a parent patch., f 24;
 #X connect 2 0 3 0;
-#X connect 4 0 5 3;
-#X connect 5 0 9 0;
-#X connect 5 1 9 1;
-#X connect 5 2 9 2;
-#X connect 5 3 9 3;
-#X connect 6 0 0 0;
-#X connect 6 1 1 0;
-#X connect 7 0 18 0;
-#X connect 7 1 18 1;
-#X connect 7 2 18 2;
-#X connect 7 3 18 3;
-#X connect 8 0 5 3;
-#X connect 9 0 10 0;
-#X connect 9 1 10 1;
-#X connect 9 2 10 2;
-#X connect 9 3 10 3;
-#X connect 10 0 17 0;
-#X connect 10 1 17 1;
-#X connect 10 2 17 2;
-#X connect 10 3 17 3;
-#X connect 12 0 4 0;
-#X connect 13 0 15 0;
-#X connect 15 0 2 0;
-#X connect 16 0 14 0;
-#X connect 17 0 7 0;
-#X connect 17 1 7 1;
-#X connect 17 2 7 2;
-#X connect 17 3 7 3;
-#X connect 18 0 6 0;
-#X connect 18 1 6 1;
-#X connect 18 2 6 2;
-#X connect 18 3 6 3;
+#X connect 4 0 7 0;
+#X connect 4 1 7 1;
+#X connect 4 2 7 2;
+#X connect 4 3 7 3;
+#X connect 5 0 16 0;
+#X connect 5 1 16 1;
+#X connect 5 2 16 2;
+#X connect 5 3 17 0;
+#X connect 6 0 13 0;
+#X connect 6 1 13 1;
+#X connect 6 2 13 2;
+#X connect 6 3 13 3;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 7 2 8 2;
+#X connect 7 3 8 3;
+#X connect 8 0 12 0;
+#X connect 8 1 12 1;
+#X connect 8 2 12 2;
+#X connect 8 3 12 3;
+#X connect 10 0 2 0;
+#X connect 11 0 10 0;
+#X connect 11 0 15 0;
+#X connect 12 0 6 0;
+#X connect 12 1 6 1;
+#X connect 12 2 6 2;
+#X connect 12 3 6 3;
+#X connect 13 0 5 0;
+#X connect 13 1 5 1;
+#X connect 13 2 5 2;
+#X connect 13 3 5 3;
+#X connect 14 0 4 3;
+#X connect 16 0 0 0;
+#X connect 16 1 1 0;
+#X connect 17 0 18 0;
+#X connect 17 1 16 3;
+#X connect 18 0 16 3;
+#X connect 25 0 4 3;
+#X connect 28 0 4 3;
