@@ -1,30 +1,30 @@
 #N struct text float x float y text t;
-#N canvas 0 0 1904 968 10;
+#N canvas 0 23 1680 968 10;
 #X declare -path ./bop;
 #X declare -path ./samples;
 #X obj 100 1710 outlet~;
 #X obj 170 1710 outlet~;
-#X obj 700 332 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 700 332 tgl 15 1 empty empty ENABLE\  17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X obj 700 360 switch~;
 #X obj 100 370 bop;
-#A saved 110;
+#A saved 90;
 #X obj 100 1410 bop.mix;
-#A saved 0 1.00479 0;
+#A saved 0 0.850362 -0.5;
 #X obj 100 1010 bop.sampler;
-#A saved banjo.wav 0 0.269663 0.195652 0 0 4.2951 1;
+#A saved note1.wav 0 0.269663 0 1 0 4.2951 1;
 #X obj 100 520 bop.rhythm;
-#A saved 8.625 1.89643 1 0 1\ 1\ 1\ 1\ 1\ 1\ 1\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0\ 0
+#A saved 24 2.80952 1 1 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 1
 ;
 #X obj 100 738 bop.notelist;
-#A saved g4\ f#4\ d4 0;
-#X obj 400 590 bop.palette;
+#A saved g3\ f#3\ e3\ d3\ c3\ b2\ a2\ g2 0.075;
+#X obj 740 480 bop.palette;
 #X obj 700 300 route play;
 #X obj 700 230 inlet;
 #X obj 100 836 bop.notefx;
-#A saved 0.56 -1.20571 0 0 92.0732 127 1 0 0;
+#A saved 0.56 0.08 0 0 100 112 1 25 35.8696;
 #X obj 100 1230 bop.reverb;
-#A saved 0.866848 0.278533 0.793478 0.0520565 0.722263 0 0;
+#A saved 0.866848 0.278533 0.98913 0.181951 0.722263 0 0;
 #X obj 500 230 r \$0-from-parent;
 #X obj 710 260 s \$0-from-parent;
 #X obj 100 1608 bop.out;
@@ -45,7 +45,7 @@ through.;
 #X msg 350 280 play 0;
 #X text 370 1550 🦆You can intercept messages from upstream to automate
 other parameters, f 22;
-#X text 400 570 🐣use bop.palette to browse and create bop.modules
+#X text 740 460 🐣use bop.palette to browse and create bop.modules
 ;
 #X text 100 100 🦉bop is a modular tool suite for music making in
 Purr Data and Pure Data vanilla., f 55;
@@ -64,6 +64,10 @@ how., f 26;
 object which disables audio processing in this sketch when bop is not
 playing. This allows for scalability when working with many sketches
 controlled from a parent patch., f 24;
+#X msg 370 620 notelist c#3 d#3 f3 f#3 g#3 a#3 c4;
+#X text 370 560 change this message and watch it received by the notelist
+module's "notelist" parameter., f 34;
+#X msg 370 520 notelist g3 f#3 e3 d3 c3 b2 a2 g2;
 #X connect 2 0 3 0;
 #X connect 4 0 7 0;
 #X connect 4 1 7 1;
@@ -104,3 +108,5 @@ controlled from a parent patch., f 24;
 #X connect 18 0 16 3;
 #X connect 25 0 4 3;
 #X connect 28 0 4 3;
+#X connect 38 0 7 3;
+#X connect 40 0 7 3;

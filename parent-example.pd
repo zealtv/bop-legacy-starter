@@ -1,50 +1,33 @@
 #N struct text float x float y text t;
-#N canvas 558 114 1111 607 10;
+#N canvas 429 188 1111 607 10;
 #X obj 200 280 sketch01, f 16;
 #X obj 200 160 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X msg 280 230 play \$1;
+#000000 1 1;
 #X text 220 160 👈 click to start;
-#X msg 200 230 audio 0;
 #X obj 460 490 dac~, f 16;
 #X text 310 280 👈 click to open bop sketch;
-#X obj 200 200 t b f, f 13;
-#X text 110 220 disable the bop.out module in sketch01, f 13;
-#X msg 350 230 bpm 80;
-#X obj 350 200 loadbang;
 #X obj 630 280 sketch01, f 16;
 #X obj 630 160 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X msg 710 230 play \$1;
+#000000 1 1;
 #X text 650 160 👈 click to start;
-#X msg 630 230 audio 0;
-#X obj 630 200 t b f, f 13;
-#X obj 780 200 loadbang;
-#X msg 780 230 bpm 40;
 #X msg 490 230 rewind 1;
 #X text 390 20 This demonstrates playing two instances of the same
 bop sketch at different bpms and summing them., f 33;
 #X text 510 200 sync!;
 #X obj 490 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
-#X connect 0 0 5 0;
-#X connect 0 1 5 1;
-#X connect 1 0 7 0;
-#X connect 2 0 0 0;
-#X connect 4 0 0 0;
-#X connect 7 0 4 0;
-#X connect 7 1 2 0;
-#X connect 9 0 0 0;
-#X connect 10 0 9 0;
-#X connect 11 0 5 0;
-#X connect 11 1 5 1;
-#X connect 12 0 16 0;
-#X connect 13 0 11 0;
-#X connect 15 0 11 0;
-#X connect 16 0 15 0;
-#X connect 16 1 13 0;
-#X connect 17 0 18 0;
-#X connect 18 0 11 0;
-#X connect 19 0 11 0;
-#X connect 19 0 0 0;
-#X connect 22 0 19 0;
+#X msg 200 230 play \$1 \, bpm 90 \, pan -0.5 \, audio 0;
+#X msg 630 230 play \$1 \, bpm 120 \, pan 0.5 \, audio 0;
+#X text 100 220 Send messages to all connected bop modules!, f 13
+;
+#X connect 0 0 3 0;
+#X connect 0 1 3 1;
+#X connect 1 0 12 0;
+#X connect 5 0 3 0;
+#X connect 5 1 3 1;
+#X connect 6 0 13 0;
+#X connect 8 0 0 0;
+#X connect 8 0 5 0;
+#X connect 11 0 8 0;
+#X connect 12 0 0 0;
+#X connect 13 0 5 0;

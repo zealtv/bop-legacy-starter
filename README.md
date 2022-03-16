@@ -30,3 +30,5 @@ Open the new bop-starter folder.  Open sketch001.pd in Purr Data.
 *(or pd vanilla + cyclone, iemguts & freeverb libraries)*
 
 **this is all pretty fresh.  expect gremlins. vanilla compatability currently dubious**
+
+This starter makes use sampels by [Ian McCurdy](http://www.iainmccurdy.org/soundlibrary.html)[(CC-A2.0)](https://creativecommons.org/licenses/by/2.0/). 
