@@ -2,46 +2,44 @@
 #N canvas 0 23 1680 968 10;
 #X declare -path ./bop;
 #X declare -path ./samples;
-#X obj 470 245 cnv 15 271 40 empty empty empty 20 12 0 14 #ffebe7 #404040
+#X obj 470 250 cnv 15 271 40 empty empty empty 20 12 0 14 #f4c8e4 #404040
 0;
 #X obj 490 1525 outlet~;
 #X obj 560 1525 outlet~;
-#X obj 70 1142 tgl 15 1 empty empty ENABLE\  17 7 0 10 #fcfcfc #000000
+#X obj 140 1152 tgl 15 1 empty empty ENABLE\  17 7 0 10 #fcfcfc #000000
 #000000 1 1;
-#X obj 70 1170 switch~;
+#X obj 140 1180 switch~;
 #X obj 490 105 bop;
 #A saved 90;
 #X obj 490 1225 bop.mix;
-#A saved 0 0.599977 -0.5;
+#A saved 0 0.739139 0;
 #X obj 490 825 bop.sampler;
 #A saved note1.wav 0 0.269663 0 1 0 4.2951 1;
 #X obj 490 335 bop.rhythm;
-#A saved 24 2.80952 1 1 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0
+#A saved 24 2.80952 1 0 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0\ 1\ 0\ 0
 ;
 #X obj 490 550 bop.notelist;
 #A saved g3\ f#3\ e3\ d3\ c3\ b2\ a2\ g2 0.075;
 #X obj 800 120 bop.palette;
-#X obj 70 1110 route play;
-#X obj 70 890 inlet;
+#X obj 140 1120 route play;
+#X obj 140 930 inlet;
 #X obj 490 650 bop.notefx;
 #A saved 0.56 0.08 0 0 100 112 1 25 35.8696;
 #X obj 490 1045 bop.reverb;
 #A saved 0.866848 0.278533 0.98913 0.181951 0.722263 0 0;
-#X obj 110 980 r \$0-from-parent;
-#X obj 110 950 s \$0-from-parent;
 #X obj 490 1423 bop.out;
-#A saved 1 0 0 0;
+#A saved 0 0 0 0;
 #X obj 691 1342 route play;
 #X msg 690 1365 audio \$1;
-#X obj 100 40 declare -path ./bop;
-#X obj 100 65 declare -path ./samples;
-#X text 490 255 LEFT;
-#X text 540 255 RIGHT;
-#X text 590 255 MIDI-notes;
-#X msg 320 310 play 1;
+#X obj 100 10 declare -path ./bop;
+#X obj 100 35 declare -path ./samples;
+#X text 480 260 LEFT;
+#X text 540 260 RIGHT;
+#X text 600 260 MIDI-notes;
+#X msg 320 360 play 1;
 #X obj 100 100 cnv 15 336 30 empty empty 🐦\ WELCOME\ TO\ THE\ BOP\ STARTER\ SKETCH
-20 12 0 14 #400040 #ffffff 0;
-#X msg 370 310 play 0;
+20 12 0 14 #94c4ec #ffffff 0;
+#X msg 370 360 play 0;
 #X text 800 100 🐣use bop.palette to browse and create bop.modules
 ;
 #X text 100 140 🦉bop is a modular tool suite for music making in
@@ -50,44 +48,42 @@ Purr Data and Pure Data vanilla., f 55;
 and freeverb libraries., f 55;
 #X text 100 250 bop uses the same inlet/outlet convention as ORAC.
 , f 53;
-#X text 250 930 🦉This bop sketch can be controlled from a parent
+#X text 220 920 🦉This bop sketch can be controlled from a parent
 patch to be mixed with bop other sketches., f 24;
-#X text 250 990 Close this patch and open parent-example.pd to see
+#X text 220 980 Close this patch and open parent-example.pd to see
 how., f 26;
 #X msg 120 580 notelist c#3 d#3 f3 f#3 g#3 a#3 c4;
 #X text 100 500 change this message and watch it received by the notelist
 module's "notelist" parameter., f 34;
 #X msg 100 550 notelist g3 f#3 e3 d3 c3 b2 a2 g2;
-#X obj 320 350 s \$0-to-bop;
+#X obj 320 400 s \$0-to-bop;
 #X obj 690 75 r \$0-to-bop;
-#X obj 110 1010 s \$0-to-bop;
-#X text 670 255 messages;
-#X text 100 410 audio \, MIDI and messages are passed from module to
-module \, top to bottom., f 53;
+#X obj 140 960 s \$0-to-bop;
+#X text 670 260 messages;
 #X obj 100 610 s \$0-to-bop;
-#X text 100 310 messages are addressed by parameter label. these play
-messages control the large toggle labelled play on the first bop module
-in the chain., f 30;
 #X text 320 1330 you can intercept messages from upstream to automate
 other parameters - or do any other pd ninja moves to glue things together.
 , f 22;
 #X text 160 860 RUNNING MULTIPLE SKETCHES, f 26;
 #X text 160 720 modules and their parameters will save their state
 with the parent patch making it easy to tweak and save., f 42;
-#X text 320 1433 if in doubt \, route and print messages out of the
-right inlet to inspect., f 22;
-#X text 200 1100 👈 this maps incoming play messages to control the
-switch object which disables audio processing in this sketch when it
-is stopped from a parent patch., f 24;
+#X text 100 280 audio \, MIDI and messages are passed through from
+top to bottom, f 52;
+#X text 100 360 messages are addressed by parameter label. these play
+messages control the large toggle labelled play on the first bop module
+in the chain \, as well as the toggle on this bop.rhythm, f 30;
+#X obj 140 1090 r \$0-to-bop;
+#X text 220 1120 👈 this maps bop play messages to the switch~ object
+to free resources when not playing., f 24;
 #X connect 3 0 4 0;
 #X connect 5 0 8 0;
 #X connect 5 1 8 1;
 #X connect 5 2 8 2;
 #X connect 5 3 8 3;
-#X connect 6 0 17 0;
-#X connect 6 1 17 1;
-#X connect 6 2 17 2;
-#X connect 6 3 18 0;
+#X connect 6 0 15 0;
+#X connect 6 1 15 1;
+#X connect 6 2 15 2;
+#X connect 6 3 16 0;
 #X connect 7 0 14 0;
 #X connect 7 1 14 1;
 #X connect 7 2 14 2;
@@ -101,8 +97,7 @@ is stopped from a parent patch., f 24;
 #X connect 9 2 13 2;
 #X connect 9 3 13 3;
 #X connect 11 0 3 0;
-#X connect 12 0 11 0;
-#X connect 12 0 16 0;
+#X connect 12 0 37 0;
 #X connect 13 0 7 0;
 #X connect 13 1 7 1;
 #X connect 13 2 7 2;
@@ -111,14 +106,14 @@ is stopped from a parent patch., f 24;
 #X connect 14 1 6 1;
 #X connect 14 2 6 2;
 #X connect 14 3 6 3;
-#X connect 15 0 39 0;
-#X connect 17 0 1 0;
-#X connect 17 1 2 0;
-#X connect 18 0 19 0;
-#X connect 18 1 17 3;
-#X connect 19 0 17 3;
-#X connect 25 0 37 0;
-#X connect 27 0 37 0;
-#X connect 34 0 42 0;
-#X connect 36 0 42 0;
-#X connect 38 0 5 3;
+#X connect 15 0 1 0;
+#X connect 15 1 2 0;
+#X connect 16 0 17 0;
+#X connect 16 1 15 3;
+#X connect 17 0 15 3;
+#X connect 23 0 35 0;
+#X connect 25 0 35 0;
+#X connect 32 0 39 0;
+#X connect 34 0 39 0;
+#X connect 36 0 5 3;
+#X connect 45 0 11 0;
