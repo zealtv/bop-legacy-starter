@@ -1,6 +1,8 @@
 # bop-starter
 A starter template for a new bop sketch.
 
+![bop starter sketch01.pd](./bop-starter.png)
+
 ### What is bop?
 [bop](https://github.com/zealtv/bop) is a suite of digital music making modules for Purr Data and Pure Data.  It makes computerised things musical 💻+🐦=🎷.
 
