@@ -1,5 +1,4 @@
 # bop-starter
-A starter template for a new bop sketch.
 
 ![bop starter sketch01.pd](./bop-starter.png)
 
