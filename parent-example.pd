@@ -1,51 +1,55 @@
 #N struct text float x float y text t;
 #N canvas 429 188 1111 607 10;
 #X obj 340 320 sketch01, f 16;
-#X obj 340 160 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 340 140 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
 #X text 370 60 👈 click to start;
 #X obj 600 480 dac~, f 11;
 #X text 450 320 👈 click to open bop sketch;
 #X obj 770 320 sketch01, f 16;
-#X obj 770 160 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X msg 50 390 rewind 1;
-#X text 70 360 sync!;
-#X obj 50 360 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#X obj 770 140 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 1 1;
+#X msg 50 400 rewind 1;
+#X text 70 370 sync!;
+#X obj 50 370 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
-#X text 190 210 Send messages to all connected bop modules!, f 23
-;
+#X text 40 200 Send messages to all connected bop modules!, f 45;
 #X obj 600 400 +~;
 #X obj 660 398 +~;
-#X text 50 70 This demonstrates playing two instances of the same bop
-sketch at different bpms and summing them together., f 33;
-#X obj 50 440 s \$0-to-all-sketches;
+#X obj 50 450 s \$0-to-all-sketches;
 #X obj 360 280 r \$0-to-all-sketches;
 #X obj 800 290 r \$0-to-all-sketches;
 #X obj 340 60 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
-#X text 40 310 control both patches simultaneously, f 23;
-#X msg 110 390 notelist a3 e4 a2 e3;
-#X msg 340 220 play \$1 \, bpm 100 \, pan -0.5 \, audio 0 \, amp 0.6
+#000000 1 1;
+#X text 40 320 control both patches simultaneously, f 23;
+#X msg 120 400 notelist a3 e4 a2 e3;
+#X msg 340 200 play \$1 \, bpm 100 \, pan -0.5 \, audio 0 \, amp 0.6
 ;
-#X msg 770 230 play \$1 \, bpm 80 \, pan 0.5 \, audio 0 \, amp 0.6
+#X msg 770 210 play \$1 \, bpm 80 \, pan 0.5 \, audio 0 \, amp 0.6
 ;
 #X msg 790 260 bpm 300;
+#X text 50 70 This demonstrates playing two instances of the same bop
+sketch \, each receiving different messages via an inlet., f 33;
+#X text 140 370 change tonality;
+#X obj 120 370 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 850 260 control sketch independantly;
 #X connect 0 0 11 0;
 #X connect 0 1 12 0;
-#X connect 1 0 20 0;
+#X connect 1 0 19 0;
 #X connect 5 0 11 1;
 #X connect 5 1 12 1;
-#X connect 6 0 21 0;
-#X connect 7 0 14 0;
+#X connect 6 0 20 0;
+#X connect 7 0 13 0;
 #X connect 9 0 7 0;
 #X connect 11 0 3 0;
 #X connect 12 0 3 1;
-#X connect 15 0 0 0;
-#X connect 16 0 5 0;
-#X connect 17 0 1 0;
-#X connect 17 0 6 0;
-#X connect 19 0 14 0;
-#X connect 20 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 5 0;
+#X connect 16 0 1 0;
+#X connect 16 0 6 0;
+#X connect 18 0 13 0;
+#X connect 19 0 0 0;
+#X connect 20 0 5 0;
 #X connect 21 0 5 0;
-#X connect 22 0 5 0;
+#X connect 24 0 18 0;
