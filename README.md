@@ -27,9 +27,8 @@ Open sketch001.pd in Purr Data (or pd vanilla + cyclone, iemguts & freeverb libr
 
 
 ## If you would rather clone this repository...
-clone this repository, including bop as a submodule.
 ```
-git clone --recursive https://github.com/zealtv/bop-starter
+git clone https://github.com/zealtv/bop-legacy-starter
 ```
 
 ---
