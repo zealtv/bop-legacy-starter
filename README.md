@@ -1,3 +1,5 @@
+## 🦉 Note : This has been superseded by a new, much better version of bop here: [https://github.com/zealtv/bop](https://github.com/zealtv/bop)
+
 # bop-starter
 
 ![bop starter sketch01.pd](./bop-starter.png)
